@@ -71,7 +71,6 @@
   "bugs": {
     "url": "https://github.com/geeknection/form-validation/issues"
   },
-  "homepage": "https://github.com/geeknection/form-validation#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
