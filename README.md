@@ -11,8 +11,6 @@ React Jsx component used to auto-validation of form fields
 
 ## Usage
 
-### Example with slide
-
 ```javascript
 import FormValidation from '@geeknection/form-validation-js/dist';
 ```
@@ -29,9 +27,9 @@ import FormValidation from '@geeknection/form-validation-js/dist';
                 className='form-control input-name'
                 name='name'
                 placeholder='Nome'
-                value={formData.name}
+                value={this.state.name}
                 isrequired={true}
-                onChange={handleChange}/>
+                onChange=(e) => this.setState({name: e.target.value})}/>
         </div>
         <button type='submit'>Enviar</button>
     </FormValidation>
@@ -41,6 +39,7 @@ import FormValidation from '@geeknection/form-validation-js/dist';
 - You can use any props
 - [`onSubmit`](#onSubmit)
 - [`isrequired`](#isrequired)
+- [`className`](#className)
 
 
 ---
@@ -59,9 +58,19 @@ Used to submit your form. When your type your submit function, you doesn't need 
 
 Used to say for FormValidation if element need is required
 
-| Type       | Required |
+| Type       | Required 
 | ---------- | -------- |
-| boolean    | No      |
+| boolean    | Yes      |
+
+---
+
+### `className`
+
+All field need them own class.
+
+| Type       | Required 
+| ---------- | -------- |
+| prototype  | Yes      |
 
 ---
 
