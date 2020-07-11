@@ -7,14 +7,14 @@ React Jsx component used to auto-validation of form fields
 
 ## Getting started
 
-`npm install form-validation --save`
+`npm install @geeknection/form-validation-js --save`
 
 ## Usage
 
 ### Example with slide
 
 ```javascript
-import FormValidation from 'form-validation/dist';
+import FormValidation from '@geeknection/form-validation-js/dist';
 ```
 
 ```javascript
