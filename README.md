@@ -11,28 +11,57 @@ React Jsx component used to auto-validation of form fields
 
 ## Usage
 
-```javascript
-import FormValidation from '@buuhv/react-forms';
-```
+Use class name 'form-validation-alert' to format form css alert
 
 ```javascript
-    <FormValidation onSubmit={onSubmitForm}>
-        <div style={{
-            marginBottom: 10
-        }}>
-            <input
-                style={{
-                    padding: 10
-                }}
-                className='form-control input-name'
-                name='name'
-                placeholder='Nome'
-                value={this.state.name}
-                required={true}
-                onChange=(e) => this.setState({name: e.target.value})}/>
-        </div>
-        <button type='submit'>Enviar</button>
-    </FormValidation>
+import Sidebar from "#/components/sidebar";
+import { FormValidation } from "@buuhv/react-forms";
+import { useState } from "react";
+
+function FormScreen(): JSX.Element {
+	const [state, setState] = useState({
+		title: ''
+	});
+
+	const onSubmitForm = () => {
+		console.log(state);
+	}
+	const onChangeInputForm = (e: { target: { name: any; value: any; }; }) => {
+		setState((prev) => {
+			return {
+				...prev,
+				[e.target.name]: e.target.value
+			}
+		})
+	}
+
+	return (
+		<div className='container'>
+			<FormValidation onSubmit={onSubmitForm} noValidate>
+				<div
+					style={{
+						marginBottom: 10,
+					}}
+				>
+					<input
+						style={{
+							padding: 10,
+						}}
+						className="form-control input-name"
+						name="title"
+						placeholder="title"
+						value={state.title}
+						required={true}
+						onChange={onChangeInputForm}
+					/>
+				</div>
+				<button type="submit">Submit</button>
+			</FormValidation>
+		</div>
+	);
+}
+
+export default FormScreen;
 ```
 
 ### Props

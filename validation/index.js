@@ -23,26 +23,8 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var jsx_runtime_1 = require("react/jsx-runtime");
-/**
- * Cria o estilo do alerta
- */
-function createAlertStyle() {
-    try {
-        var css = ".form-validation-alert {border: solid 1px red;box-shadow: 0px 0px 2px red;}";
-        var head = document.head || document.getElementsByTagName("head")[0];
-        var style = document.createElement("style");
-        head.appendChild(style);
-        if (style.style) {
-            style.style.cssText = css;
-        }
-        else {
-            style.appendChild(document.createTextNode(css));
-        }
-    }
-    catch (error) { }
-}
 function Validation(_a) {
-    var children = _a.children, onSubmit = _a.onSubmit, props = __rest(_a, ["children", "onSubmit"]);
+    var children = _a.children, onSubmit = _a.onSubmit, _b = _a.noValidate, noValidate = _b === void 0 ? false : _b, props = __rest(_a, ["children", "onSubmit", "noValidate"]);
     try {
         var isValid_1 = true;
         /**
@@ -141,7 +123,7 @@ function Validation(_a) {
                 console.log(error.message);
             }
         };
-        return (jsx_runtime_1.jsxs("form", __assign({}, props, { onSubmit: onFormSubmit }, { children: [!Array.isArray(children) && children, Array.isArray(children) &&
+        return (jsx_runtime_1.jsxs("form", __assign({}, props, { onSubmit: onFormSubmit, noValidate: noValidate }, { children: [!Array.isArray(children) && children, Array.isArray(children) &&
                     children.map(function (item) {
                         return item;
                     })] }), void 0));
@@ -153,6 +135,5 @@ function Validation(_a) {
             } }, { children: error.message }), void 0));
     }
 }
-createAlertStyle();
 exports.default = Validation;
 //# sourceMappingURL=index.js.map

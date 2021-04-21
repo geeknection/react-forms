@@ -1,23 +1,4 @@
-/**
- * Cria o estilo do alerta
- */
-function createAlertStyle() {
-	try {
-		let css =
-			".form-validation-alert {border: solid 1px red;box-shadow: 0px 0px 2px red;}";
-		let head = document.head || document.getElementsByTagName("head")[0];
-		let style = document.createElement("style");
-
-		head.appendChild(style);
-
-		if (style.style) {
-			style.style.cssText = css;
-		} else {
-			style.appendChild(document.createTextNode(css));
-		}
-	} catch (error) {}
-}
-function Validation({ children, onSubmit, ...props }) {
+function Validation({ children, onSubmit, noValidate = false, ...props }) {
 	try {
 		let isValid = true;
 
@@ -132,7 +113,7 @@ function Validation({ children, onSubmit, ...props }) {
 		};
 
 		return (
-			<form {...props} onSubmit={onFormSubmit}>
+			<form {...props} onSubmit={onFormSubmit} noValidate={noValidate}>
 				{!Array.isArray(children) && children}
 				{Array.isArray(children) &&
 					children.map((item) => {
@@ -153,7 +134,5 @@ function Validation({ children, onSubmit, ...props }) {
 		);
 	}
 }
-
-createAlertStyle();
 
 export default Validation;
