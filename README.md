@@ -1,4 +1,4 @@
-# `geeknection/form-validation`
+# `@buuhv/react-forms`
 
 React Jsx component used to auto-validation of form fields
 
@@ -7,12 +7,12 @@ React Jsx component used to auto-validation of form fields
 
 ## Getting started
 
-`npm install @geeknection/form-validation-js --save`
+`npm install @buuhv/react-forms-js --save`
 
 ## Usage
 
 ```javascript
-import FormValidation from '@geeknection/form-validation-js/dist';
+import FormValidation from '@buuhv/react-forms';
 ```
 
 ```javascript
@@ -28,7 +28,7 @@ import FormValidation from '@geeknection/form-validation-js/dist';
                 name='name'
                 placeholder='Nome'
                 value={this.state.name}
-                isrequired={true}
+                required={true}
                 onChange=(e) => this.setState({name: e.target.value})}/>
         </div>
         <button type='submit'>Enviar</button>
@@ -38,7 +38,7 @@ import FormValidation from '@geeknection/form-validation-js/dist';
 ### Props
 - You can use any props
 - [`onSubmit`](#onSubmit)
-- [`isrequired`](#isrequired)
+- [`required`](#required)
 - [`className`](#className)
 
 
@@ -54,7 +54,7 @@ Used to submit your form. When your type your submit function, you doesn't need 
 
 ---
 
-### `isrequired`
+### `required`
 
 Used to say for FormValidation if element need is required
 
@@ -76,7 +76,7 @@ All field need them own class.
 
 ## Contributors
 
-This module was extracted from `React Js` core. Please reffer to https://github.com/geeknection/form-validation/graphs/contributors for the complete list of contributors.
+This module was extracted from `React Js` core. Please reffer to https://github.com/buuhv/react-forms/graphs/contributors for the complete list of contributors.
 
 ## License
 The library is released under the MIT licence. For more information see `LICENSE`.
